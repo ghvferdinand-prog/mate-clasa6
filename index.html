@@ -73,12 +73,12 @@ ul.task-list li input[type="checkbox"] {
 <section id="adunarea-numerelor-întregi" class="level2">
 <h2 class="anchored" data-anchor-id="adunarea-numerelor-întregi">Adunarea numerelor întregi</h2>
 <p>Regulă: Păstrăm semnul celui mai mare și scădem modulele.</p>
-```yctnv html
+```cisyt html
 <div style="padding: 20px; border: 1px solid #ccc; border-radius: 8px; text-align: center;">
-<pre><code>&lt;p id="ex-text"&gt;Se încarcă...&lt;/p&gt;
-&lt;input type="number" id="raspuns" placeholder="Rezultat"&gt;
-&lt;button onclick="check()"&gt;Verifică&lt;/button&gt;
-&lt;p id="result"&gt;&lt;/p&gt;</code></pre>
+<pre><code>&lt;p id="ex-text" style="font-size: 1.5rem; font-weight: bold;"&gt;Se încarcă...&lt;/p&gt;
+&lt;input type="number" id="raspuns" placeholder="Rezultat" style="padding: 5px;"&gt;
+&lt;button onclick="check()" style="padding: 5px 15px; background: #007bff; color: white; border: none; border-radius: 4px;"&gt;Verifică&lt;/button&gt;
+&lt;p id="result" style="margin-top: 15px; font-weight: bold;"&gt;&lt;/p&gt;</code></pre>
 </div>
 <script>
 let a = -12, b = 5, sol = -7;
@@ -86,7 +86,14 @@ document.getElementById('ex-text').innerText = `Cât este (${a}) + (${b})?`;
 
 function check() {
     let r = document.getElementById('raspuns').value;
-    document.getElementById('result').innerText = (r == sol) ? "✅ Corect!" : "❌ Mai încearcă!";
+    let out = document.getElementById('result');
+    if (r == sol) {
+        out.innerText = "✅ Corect!";
+        out.style.color = "green";
+    } else {
+        out.innerText = "❌ Mai încearcă!";
+        out.style.color = "red";
+    }
 }
 </script>
 </section>
